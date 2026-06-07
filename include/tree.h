@@ -8,7 +8,7 @@
 struct Node {
     char value;
     std::vector<Node*> children;
-    Node(char val) : value(val) {}
+    explicit Node(char val) : value(val) {}
 };
 class PMTree {
  private:
@@ -17,10 +17,10 @@ class PMTree {
     void buildTree(Node* parent, std::vector<char> remaining);
     void deleteTree(Node* node);
     void collectPermutations(Node* node, std::vector<char>& current,
-        std::vector<std::vector<char>>& result);
+        std::vector<std::vector<char>>& result) const;
 
  public:
-    PMTree(const std::vector<char>& input);
+    explicit PMTree(const std::vector<char>& input);
     ~PMTree();
     Node* getRoot() const { return root; }
     std::vector<char> getAlphabet() const { return alphabet; }
