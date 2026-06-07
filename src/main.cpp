@@ -4,6 +4,7 @@
 #include <chrono>
 #include <random>
 #include <fstream>
+#include <cstdio> 
 #include "tree.h"
 
 void printPermutation(const std::vector<char>& perm) {
