@@ -92,7 +92,8 @@ void navigateTree(Node* node, int& remaining_num, std::vector<char>& result) {
         navigateTree(node->children[0], remaining_num, result);
         return;
     }
-    int perms_per_child = factorial(static_cast<int>(node->children.size()) - 1);
+    int perms_per_child = 
+    factorial(static_cast<int>(node->children.size()) - 1);
     for (size_t i = 0; i < node->children.size(); i++) {
         if (remaining_num <= perms_per_child) {
             navigateTree(node->children[i], remaining_num, result);
